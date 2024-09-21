@@ -22,9 +22,10 @@ export async function handler(event, context) {
             headers: {
                 'Content-Type': 'application/json',
                 'x-api-key': `${apiKey}`,
-                'anthropic-version':'2023-06-01'
+                'anthropic-version':'2023-06-01',
+                'max_tokens_to_sample':max_tokens
             },
-            body: JSON.stringify({ prompt, max_tokens }),
+            body: JSON.stringify({model:"claude-2.1", prompt }),
         });
 
         const data = await response.json();
