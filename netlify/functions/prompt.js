@@ -2,6 +2,7 @@
 
 export async function handler(event, context) {
     const apiKey = process.env.key
+    console.log(apiKey)
     ; // Set your API key in Netlify environment variables
 
     // Check if the request is a POST
