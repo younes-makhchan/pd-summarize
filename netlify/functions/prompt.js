@@ -14,7 +14,8 @@ export async function handler(event, context) {
     }
 
     // Parse the request body
-    const { prompt, max_tokens } = JSON.parse(event.body);
+    const { prompt } = JSON.parse(event.body);
+    console.log(apiKey,prompt)
 
     try {
         const response = await fetch('https://api.anthropic.com/v1/complete', {
@@ -23,7 +24,7 @@ export async function handler(event, context) {
                 'Content-Type': 'application/json',
                 'x-api-key': `${apiKey}`,
                 'anthropic-version':'2023-06-01',
-                'max_tokens_to_sample':max_tokens
+                'max_tokens_to_sample':100000
             },
             body: JSON.stringify({model:"claude-2.1", prompt }),
         });
