@@ -22,6 +22,7 @@ export async function handler(event, context) {
             headers: {
                 'Content-Type': 'application/json',
                 'x-api-key': `${apiKey}`,
+                'anthropic-version':'2023-06-01'
             },
             body: JSON.stringify({ prompt, max_tokens }),
         });
