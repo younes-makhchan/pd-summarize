@@ -26,7 +26,7 @@ export async function handler(event, context) {
                 'anthropic-version':'2023-06-01',
                 'max_tokens_to_sample':100000
             },
-            body: JSON.stringify({model:"claude-2.1", prompt:"Human: please give me a summar of the following pdf text "+prompt+"\n\n Assistant:Summary of the pdf is ",'max_tokens_to_sample':100000 }),
+            body: JSON.stringify({model:"claude-2.1", prompt:"Human: please give me a summar of the following pdf text "+prompt+"\n\nAssistant:",'max_tokens_to_sample':100000 }),
         });
 
         const data = await response.json();
