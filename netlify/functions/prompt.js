@@ -26,7 +26,7 @@ export async function handler(event, context) {
                 'anthropic-version':'2023-06-01',
                 'max_tokens_to_sample':100000
             },
-            body: JSON.stringify({model:"claude-2.1", prompt }),
+            body: JSON.stringify({model:"claude-2.1", prompt,'max_tokens_to_sample':100000 }),
         });
 
         const data = await response.json();
